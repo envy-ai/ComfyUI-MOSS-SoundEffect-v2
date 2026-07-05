@@ -1,0 +1,4 @@
+# Upstream MOSS-SoundEffect v2 package. It intentionally does not request the
+# torch-cu128 extra so it can use the torch build already installed for ComfyUI.
+huggingface_hub
+moss-soundeffect-v2 @ git+https://github.com/OpenMOSS/MOSS-TTS.git#subdirectory=moss_soundeffect_v2
