@@ -29,6 +29,14 @@ The loader defaults `disable_torch_compile` to enabled. This follows the upstrea
 
 On CUDA 13 torch builds, the node also prepends and preloads the matching `nvidia/cu13/lib` runtime libraries before importing or running MOSS. This keeps NVRTC VAE decode kernels from failing when `libnvrtc-builtins.so.13.0` is installed but not visible to the ComfyUI process.
 
+The loader has an advanced `weight_quantization` option:
+
+- `auto`: uses `int8_convrot` for the MOSS DiT on supported CUDA ComfyUI installs, otherwise falls back to original weights.
+- `off`: uses the upstream MOSS loader and original weights.
+- `int8_convrot`: forces streaming DiT quantization and raises an error if ComfyUI's int8 quantization support is unavailable.
+
+The `int8_convrot` path streams `transformer/diffusion_pytorch_model.safetensors` one tensor at a time and quantizes DiT linear weights as they are loaded. This avoids materializing the full DiT state dict in RAM. The text encoder and DAC VAE still use the upstream loading paths.
+
 ## Dependencies
 
 The upstream package requires Python 3.12+ and has strict dependency pins. It uses the existing ComfyUI torch install because this requirements file does not install the upstream torch CUDA extra.
