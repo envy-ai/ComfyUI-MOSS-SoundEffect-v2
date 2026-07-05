@@ -1,0 +1,208 @@
+{
+  "id": "fe629123-3041-406e-938a-2865d5c45fe2",
+  "revision": 0,
+  "last_node_id": 8,
+  "last_link_id": 6,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "MOSS_SoundEffectV2Generate",
+      "pos": [
+        566.9091431778976,
+        82.0511204230832
+      ],
+      "size": [
+        400,
+        334
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "moss_model",
+          "type": "MOSS_SOUNDEFFECT_V2_MODEL",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "envy-ai/ComfyUI-MOSS-SoundEffect-v2",
+        "ver": "faf867e023a525b806101aab3a486b32ec4642bd",
+        "Node name for S&R": "MOSS_SoundEffectV2Generate",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "A cat purring",
+        "",
+        3,
+        50,
+        4,
+        5,
+        550776431325758,
+        "randomize",
+        true,
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 8,
+      "type": "MOSS_SoundEffectV2Loader",
+      "pos": [
+        167.83526241857467,
+        82.0511204230832
+      ],
+      "size": [
+        290.2058792114258,
+        274
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "moss_model",
+          "type": "MOSS_SOUNDEFFECT_V2_MODEL",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "envy-ai/ComfyUI-MOSS-SoundEffect-v2",
+        "ver": "faf867e023a525b806101aab3a486b32ec4642bd",
+        "Node name for S&R": "MOSS_SoundEffectV2Loader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "OpenMOSS-Team/MOSS-SoundEffect-v2.0",
+        "",
+        "auto",
+        "auto",
+        "int8_convrot",
+        true,
+        false,
+        "",
+        true,
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 6,
+      "type": "SaveAudio",
+      "pos": [
+        1075.7771447257946,
+        82.0511204230832
+      ],
+      "size": [
+        270,
+        112
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.27.0",
+        "Node name for S&R": "SaveAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        },
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "audio/ComfyUI"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    }
+  ],
+  "links": [
+    [
+      4,
+      5,
+      0,
+      6,
+      0,
+      "AUDIO"
+    ],
+    [
+      6,
+      8,
+      0,
+      5,
+      0,
+      "MOSS_SOUNDEFFECT_V2_MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ue_links": [],
+    "ds": {
+      "scale": 1.1560606060606058,
+      "offset": [
+        -2.626261179912801,
+        277.81522218396765
+      ]
+    },
+    "links_added_by_ue": [],
+    "frontendVersion": "1.45.20",
+    "VHS_latentpreview": true,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
